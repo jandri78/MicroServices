@@ -70,4 +70,15 @@ public class UserController {
 		return user;
 	}
 	
+	
+	
+	@PostMapping(path = "/usersAdd")
+	public User addOne2(@Valid @RequestBody User user) {
+	
+		User saveUser = service.save(user);
+		
+		
+		return saveUser;
+	}
+	
 }
