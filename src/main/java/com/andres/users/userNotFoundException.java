@@ -1,4 +1,4 @@
-package com.andres;
+package com.andres.users;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;

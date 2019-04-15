@@ -1,4 +1,4 @@
-package com.andres;
+package com.andres.users;
 
 import java.net.URI;
 import java.util.List;

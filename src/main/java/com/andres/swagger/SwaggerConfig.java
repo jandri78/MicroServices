@@ -1,4 +1,4 @@
-package com.andres;
+package com.andres.swagger;
 
 import org.springframework.context.annotation.Configuration;
 

@@ -1,4 +1,4 @@
-package com.andres;
+package com.andres.exceptions;
 
 import java.util.Date;
 
