@@ -8,25 +8,25 @@ import java.util.List;
 import org.springframework.stereotype.Component;
 
 @Component
-public class UserDaoService {
+public class UserDaoServiceM {
 
 	private static int usersCount = 3;
 
-	private static List<User> users = new ArrayList<>();
+	private static List<UserM> users = new ArrayList<>();
 
 	static {
-		users.add(new User(1, "Andres", new Date()));
-		users.add(new User(2, "Pedro", new Date()));
-		users.add(new User(3, "John", new Date()));
+		users.add(new UserM(1, "Andres", new Date()));
+		users.add(new UserM(2, "Pedro", new Date()));
+		users.add(new UserM(3, "John", new Date()));
 
 	}
 
-	public List<User> findAll() {
+	public List<UserM> findAll() {
 		return users;
 
 	}
 
-	public User save(User user) {
+	public UserM save(UserM user) {
 		if (user.getId() == null) {
 			user.setId(++usersCount);
 		}
@@ -34,9 +34,9 @@ public class UserDaoService {
 		return user;
 	}
 
-	public User getOne(int id) {
+	public UserM getOne(int id) {
 
-		for (User user : users) {
+		for (UserM user : users) {
 			if (user.getId() == id) {
 				return user;
 			}
@@ -44,11 +44,11 @@ public class UserDaoService {
 		return null;
 	}
 
-	public User deleteOne(int id) {
-		Iterator<User> iterator = users.iterator();
+	public UserM deleteOne(int id) {
+		Iterator<UserM> iterator = users.iterator();
 
 		while (iterator.hasNext()) {
-			User user = iterator.next();
+			UserM user = iterator.next();
 
 			if (user.getId() == id) {
 				iterator.remove();
