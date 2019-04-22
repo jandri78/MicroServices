@@ -21,6 +21,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import com.google.gson.Gson;
+
 @RestController
 public class UserController {
 
@@ -36,7 +38,9 @@ public class UserController {
 	@GetMapping(path = "/users")
 	public List<User> AllUsers(){
 		
-		return userRepository.findAll();
+		List<User>  userReturn = userRepository.findAll();
+			
+		return userReturn;
 	}
 	
 	@GetMapping(path = "/users/{id}")
@@ -58,12 +62,19 @@ public class UserController {
 		return resource;
 	}   
 	
+	Gson gson = new Gson(); 
+	
 	@PostMapping(path = "/users")
 	public ResponseEntity<Object> addOne(@Valid @RequestBody User user) {
 	
 		User saveUser = userRepository.save(user);
 		
 		URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(saveUser.getId()).toUri();
+		
+		String a = gson.toJson(user);
+		
+		System.out.println(a);
+		
 		
 		return ResponseEntity.created(location).build();
 	}
