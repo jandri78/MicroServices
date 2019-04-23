@@ -32,7 +32,7 @@ public class MicroServicesApplication {
 	@Bean
 	public ResourceBundleMessageSource messageSource() {
 		ResourceBundleMessageSource messageSource = new ResourceBundleMessageSource();
-		messageSource.setBasename("messages");
+		messageSource.setBasename("message");
 		
 		return messageSource;
 	}
