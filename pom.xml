@@ -104,6 +104,11 @@
 			<artifactId>spring-data-rest-hal-browser</artifactId>
 		</dependency>
 
+<dependency>
+	<groupId>com.telintel.services.program.service</groupId>
+	<artifactId>program-service</artifactId>
+	<version>1.6.0-RELEASE</version>
+</dependency>
 	</dependencies>
 
 	<build>
